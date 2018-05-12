@@ -1,9 +1,14 @@
 <h1>Homepage</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-
+<h1>Blog Posts</h1>
 <% @posts.each do |post|%>
-<h1><%= post.title %></h1>
+<h2><%= post.title %></h2>
 <p><%= post.body %></p>
 <%= post.created_at.strftime("%b %d, %Y")%>
+<% end %>
+
+<h1>Skills</h1>
+<% @skills.each do |skill| %>
+<p> <%= "#{skill.title}: "%> <%= "#{skill.percent_utilized}"%></p>
 <% end %>
