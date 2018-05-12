@@ -1,0 +1,9 @@
+<h1>Homepage</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<% @posts.each do |post|%>
+<h1><%= post.title %></h1>
+<p><%= post.body %></p>
+<%= post.created_at.strftime("%b %d, %Y")%>
+<% end %>
