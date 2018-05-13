@@ -5,3 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+10.times do |blog|
+ Blog.create!(
+   title: "My Blog Post #{blog}",
+   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget malesuada nisi. Curabitur condimentum, sem ac fermentum condimentum, erat massa cursus metus, nec gravida enim lectus ornare sapien. Sed sit amet justo vulputate nibh tincidunt ultricies eu ut enim. 
+
+    Etiam lacus elit, pharetra sodales aliquam in, mollis eu tortor. Fusce lacinia quis mauris vel varius. Nam condimentum ornare arcu, sed lacinia risus ultricies quis. Nam varius sagittis orci ut sodales."
+    )
+end
+
+puts "10 blog posts created"
+
+3.times do |skill|
+  Skill.create!(
+    title: "HTML/CSS #{skill}",
+    percent_utilized: 50
+  )
+end
+
+puts "3 skills created"
+
+9.times do |portfolio_item|
+  Portfolio.create!(
+    title: "Portfolio title: #{portfolio_item}",
+    subtitle: "Indie paper designers",
+    body: "Fusce lacinia quis mauris vel varius. Nam condimentum ornare arcu.",
+    main_image: "http://via.placeholder.com/600x400",
+    thumb_image: "http://via.placeholder.com/350x200"
+  )
+end
+
+puts "9 portfolio items created"
