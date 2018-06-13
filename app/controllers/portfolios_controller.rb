@@ -3,6 +3,14 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
+  def ruby
+    @ruby_portfolio_items = Portfolio.ruby
+  end
+
+  def javascript
+    @javascript_portfolio_items = Portfolio.javascript
+  end
+
   def show
     @portfolio_item = Portfolio.find(params[:id])
   end
@@ -46,4 +54,5 @@ class PortfoliosController < ApplicationController
       format.html { redirect_to portfolios_url, notice: 'Portfolio item was deleted.' }
     end
   end 
+
 end
