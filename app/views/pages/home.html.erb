@@ -11,3 +11,8 @@
 <% @skills.each do |skill| %>
 <p> <%= "#{skill.title}: "%> <%= "#{skill.percent_utilized}"%></p>
 <% end %>
+
+<hr>
+<%= content_tag :p, class: "my-special-class" do %>
+Hi I'm in a paragraph
+<% end %>

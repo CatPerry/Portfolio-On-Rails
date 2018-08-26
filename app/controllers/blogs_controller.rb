@@ -12,15 +12,19 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @page_title = @blog.title
+    @topic = @blog.topic_id
   end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @topic = Topic.new
   end
 
   # GET /blogs/1/edit
   def edit
+    # @topic = @blog.id.
+
   end
 
   # POST /blogs
@@ -80,6 +84,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end

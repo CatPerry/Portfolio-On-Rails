@@ -27,12 +27,9 @@
     <p class="alert"><%= alert %></p>
 
     <%= login_helper %>
-    
+
     <%= yield %>
 
-    <%if session[:source]%>
-    <hr>
-    <p>Thanks for visiting me from <%=session[:source]%>!</p>
-    <%end %>
+    <%= source_helper("application")%>
   </body>
 </html>
