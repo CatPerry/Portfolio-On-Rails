@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
+    <title><%=@page_title%></title>
     <%= csrf_meta_tags %>
+    <meta name="keywords" content="<%=@seo_keywords %>" />
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,17 +13,20 @@
   
   <nav>
     Cat Perry
+    <div>
+      <div><%=link_to "Home", home_path%></div>
+      <div><%=link_to "Portfolio", portfolios_path%></div>
+      <div><%=link_to "Blog", blogs_path%></div>
+      <div><%=link_to "About Me", about_me_path%></div>
+      <div><%=link_to "Contact", contact_path%></div>
+    </div>
   </nav>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if current_user.is_a?(User) %>
-    <%= link_to "Logout", destroy_user_session_path, method: "delete"%>
-    <% else %>
-        <%= link_to "Register", new_user_registration_path%>
-        <%= link_to "Login", new_user_session_path %>
-    <%end %>
+
+    <%= login_helper %>
     
     <%= yield %>
 
